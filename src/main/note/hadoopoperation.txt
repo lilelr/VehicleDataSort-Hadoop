@@ -31,3 +31,12 @@ CREATE TABLE `data_analysis`.`classification` (
 
   hdfs dfs -ls /lwlk_data/20140425_txt/data_13/
 hdfs dfs -cat /lwlk_data/20140425_txt/data_13/320000.data
+hdfs dfs -get /lwlk_data/20140425_txt/data_13/320000.data 320000.data
+   10.2.9.42:9000 /lwlk_data/20140425_txt/data_13/ 320000.data /lwlk_data/20140504_part
+
+hdfs dfs -get /lwlk_data/20140504_part 20140504_part
+hdfs dfs -tail /lwlk_data/20140504_part/part-r-00000
+
+hadoop jar ss.jar sort.PartSort hdfs://10.2.9.42:9000/ /lwlk_data/20140425_txt/ 320000.data /lwlk_data/20160515_test/
+
+: Call From master/10.2.9.42 to master:8020 failed on connection exception: java.net.ConnectException: 拒绝连接;
