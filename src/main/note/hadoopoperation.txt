@@ -1,0 +1,33 @@
+bin/hadoop jar wc.jar WordCount /user/root/wordcount/input /user/root/wordcount/output
+bin/hdfs dfs -rm -R /user/root/wordcount/output
+bin/hdfs dfs -get  /user/root/wordcount/output wordcount
+hdfs://139.129.94.18:9000/user/root/wordcount/input hdfs://139.129.94.18:9000/user/root/wordcount/output
+http://139.129.94.18:50070/
+
+
+
+ bin/hdfs dfs -put ssfile /user/root/sec/input
+ bin/hdfs dfs -get  /user/root/sec/output ssfileoutput
+ bin/hdfs dfs -ls /user/root/sec/input
+ bin/hdfs dfs -ls /user/root/sec/output
+
+
+
+ cat bin/hdfs dfs /user/root/sec/output/*
+ bin/hdfs dfs -mkdir -p /user/root/sec/input
+
+bin/hadoop jar build/hadoop-mapreduce-examples-2.6.4.jar secondarysort /user/root/sec/input /user/root/sec/output
+CREATE TABLE `data_analysis`.`classification` (
+  `plate` VARCHAR(255) NOT NULL,
+  `plate_color` INT(11) NOT NULL,
+  `local_code` INT(11) NULL,
+  `industry_code` INT(11) NULL,
+  `xingzheng_code` INT(11) NULL,
+  `yehu_code` INT(11) NULL,
+  `typeself_catalogue` INT NULL,
+  `manage_catalogue` INT NULL,
+  `manage_area` VARCHAR(255) NULL,
+  PRIMARY KEY (`plate`, `plate_color`));
+
+  hdfs dfs -ls /lwlk_data/20140425_txt/data_13/
+hdfs dfs -cat /lwlk_data/20140425_txt/data_13/320000.data
