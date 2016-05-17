@@ -1,4 +1,5 @@
-package tes;
+
+package sort;
 
 import sort.GCJPoint;
 
@@ -318,5 +319,17 @@ public final class TransGps {
 
 
 
+	}
+
+	public double[] getLonggitudeAndGetLatitude(String s,String t){
+		double[] ans = {0,0};
+		double longititude=Double.parseDouble(s)/1000000;
+		double latitude=Double.parseDouble(t)/1000000;
+		GCJPoint rs3 = TransGps.wgs2gcj(longititude,latitude);
+		double lng=(double)rs3.getLongitude() / 3686400;
+		double lat=(double)rs3.getLatitude() / 3686400;
+		ans[0] = lng;
+		ans[1] = lat;
+		return ans;
 	}
 }
