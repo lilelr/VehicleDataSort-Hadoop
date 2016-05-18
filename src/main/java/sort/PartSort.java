@@ -252,10 +252,10 @@ public class PartSort {
                             // 回显时刻和接受时刻不在同一天,异常
                             errorData = 1;
                             catalogIndex = 0;
-                        } else if(largerThanFiveMinute(acceptDate,backDate)){
-                            // 回传周期大于5分钟,新的对象
-                            catalogIndex = precatalogIndex +1;
-                            errorData = 0;
+//                        } else if(largerThanFiveMinute(acceptDate,backDate)){
+//                            // 回传周期大于5分钟,新的对象
+//                            catalogIndex = precatalogIndex +1;
+//                            errorData = 0;
                         } else if(interval > 5*60){
                             // 采样间隔大于5分钟,新的对象
                             catalogIndex = precatalogIndex +1;
@@ -295,7 +295,7 @@ public class PartSort {
                         }
                     }
 
-                    val.set(val.toString()+","+errorData+","+catalogIndex);
+                    val.set(val.toString()+","+errorData+","+catalogIndex+","+longititude+","+latitude);
                     context.write(left, val);
                 }
 
