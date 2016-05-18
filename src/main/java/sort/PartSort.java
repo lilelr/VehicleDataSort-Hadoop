@@ -256,16 +256,16 @@ public class PartSort {
 //                            // 回传周期大于5分钟,新的对象
 //                            catalogIndex = precatalogIndex +1;
 //                            errorData = 0;
-                        } else if(interval > 5*60){
+                        } else if(interval > Constant.INTERVAL){
                             // 采样间隔大于5分钟,新的对象
                             catalogIndex = precatalogIndex +1;
                             errorData = 0;
-                        } else if(distance>10){
+                        } else if(distance>Constant.DISTANCE){
                             // 经纬度距离大于10km
                            catalogIndex = precatalogIndex +1;
                             errorData = 0;
 
-                        } else if(distance*3600 / interval > 120){
+                        } else if(distance*3600 / interval > Constant.SPEED){
                             //经纬度距离/采样间隔大于120km/h
                             catalogIndex = precatalogIndex +1;
                             errorData = 0;
